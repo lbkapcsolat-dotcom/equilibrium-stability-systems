@@ -16,6 +16,16 @@ Start here if you want to inspect one concrete Equilibrium mechanism instead of 
 
 The path runs a public component, executes its bounded test suite, checks adversarial controls, and ends with an explicit claim ceiling.
 
+## Targeted methodological demo
+
+A five-minute synthetic model-adequacy demonstration is available here:
+
+**[ESS GISS Model Adequacy — 5-Minute Reproducible Demo V1](demos/giss_model_adequacy_v1/README.md)**
+
+It demonstrates one bounded proposition: a model can remain numerically stable on in-regime validation while failing a predeclared decision-purpose safeguard under an omitted structural regime.
+
+This is an independent synthetic method demo. It does **not** use or validate NASA GISS ModelE and does not imply NASA/GISS endorsement or affiliation.
+
 ## Public research map
 
 ```text
