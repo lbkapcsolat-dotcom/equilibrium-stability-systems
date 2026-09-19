@@ -1,0 +1,24 @@
+{
+  "artifact_id": "ESS__GISS_MODEL_ADEQUACY__5_MINUTE_REPRODUCIBLE_DEMO__MODELE_STYLE_DECISION_SAFEGUARD__V1",
+  "expected": {
+    "sample_count": 101,
+    "numerically_stable": true,
+    "cv_max_rmse_approx": 0.002666481583491517,
+    "cv_intercept_range_approx": 0.00009031772089074241,
+    "cv_slope_range_approx": 0.0001403664114001113,
+    "stress_actual_positive_count": 41,
+    "stress_predicted_positive_count": 0,
+    "stress_false_negative_count": 41,
+    "stress_false_negative_rate": 1.0,
+    "decision_adequate": false,
+    "safeguard_state": "HOLD__STRUCTURAL_MODEL_INADEQUACY"
+  },
+  "predeclared_thresholds": {
+    "decision_threshold": 1.02,
+    "max_false_negative_rate": 0.05,
+    "max_cv_rmse": 0.01,
+    "max_intercept_range": 0.001,
+    "max_slope_range": 0.001
+  },
+  "claim_ceiling": "SYNTHETIC_METHOD_DEMO_ONLY__NO_MODELE_VALIDATION__NO_NASA_GISS_ENDORSEMENT_OR_AFFILIATION"
+}
