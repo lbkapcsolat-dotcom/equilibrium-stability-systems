@@ -8,6 +8,14 @@ This repository is the public map of the research program. It does **not** conta
 
 > **Claim ceiling:** RESEARCH_STAGE · NOT_PRODUCTION_CLAIM
 
+## Evaluate in 5 minutes
+
+Start here if you want to inspect one concrete Equilibrium mechanism instead of reading the whole architecture:
+
+**[Evaluate Equilibrium in 5 Minutes](EVALUATE_IN_5_MINUTES.md)**
+
+The path runs a public component, executes its bounded test suite, checks adversarial controls, and ends with an explicit claim ceiling.
+
 ## Public research map
 
 ```text
