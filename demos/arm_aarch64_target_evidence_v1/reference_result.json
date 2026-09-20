@@ -1,0 +1,17 @@
+{
+  "artifact_id": "ESS__ARM_AARCH64_TARGET_EVIDENCE__REPRODUCIBLE_OBJECT_GATE__V1",
+  "reference_environment": {
+    "compiler": "clang version 17.0.0 (Swift LLVM build 10999b6d034fe318f3d56c83bddb6572593a8bb0)"
+  },
+  "observed": {
+    "arm_object_sha256_run_1": "878b5401fb70e0291f14f0f3d53391ad2822ce363000faa20b4522b23568db41",
+    "arm_object_sha256_run_2": "878b5401fb70e0291f14f0f3d53391ad2822ce363000faa20b4522b23568db41",
+    "repeated_build_equal": true,
+    "arm_elf_machine": 183,
+    "declared_target_matches": true,
+    "negative_control_elf_machine": 62,
+    "negative_control_rejected": true,
+    "gate": "PASS_BOUNDED"
+  },
+  "claim_ceiling": "BUILD_ARTIFACT_TARGET_AND_REPEATABILITY_ONLY__NO_RUNTIME_CORRECTNESS__NO_HARDWARE_VALIDATION__NO_ARM_ENDORSEMENT"
+}
