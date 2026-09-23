@@ -15,7 +15,12 @@ The public question is simple:
 ### Evaluate one mechanism in 5 minutes
 **[Evaluate Equilibrium in 5 Minutes](EVALUATE_IN_5_MINUTES.md)**
 
-A small runnable example with bounded tests, adversarial controls, and an explicit claim ceiling.
+A small.runnable example with bounded tests, adversarial controls, and an explicit claim ceiling.
+
+### C≤V claim-admission kernel
+**[C≤V Claim Admission Kernel](demos/claim_admission_kernel_v1/README.md)**
+
+Offline research-stage fail-closed admission gate with one-command replay and five visible negative controls. Claim ceiling: synthetic replay only, no real actuation or production admission.
 
 ### Synthetic model-adequacy challenge
 **[5-Minute Synthetic Model Adequacy Demo](demos/giss_model_adequacy_v1/README.md)**

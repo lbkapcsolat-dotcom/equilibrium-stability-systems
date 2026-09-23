@@ -1,0 +1,15 @@
+{
+  "bounded_domain": {
+    "cases": 96,
+    "decision_equivalence": "96/96",
+    "reason_equivalence": "96/96"
+  },
+  "evidence_scope": "DECLARED_FINITE_TEST_DOMAIN_ONLY",
+  "independent_implementation_replay": "96/96_WITHIN_DECLARED_DOMAIN",
+  "internal_lineage_included": false,
+  "production_admission": false,
+  "real_actuation": false,
+  "runtime_or_host_identity_included": false,
+  "status": "RESEARCH_STAGE",
+  "universal_correctness_claim": false
+}
