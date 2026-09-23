@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Evidence Access Coach</title>
+<style>
+:root{font-family:Inter,system-ui,sans-serif;background:#f5f7fb;color:#172033}body{margin:0}.wrap{max-width:820px;margin:0 auto;padding:28px 18px 48px}header{margin-bottom:22px}.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#e7eefc;font-size:13px}h1{font-size:34px;margin:10px 0 6px}p{line-height:1.55}.grid{display:grid;gap:14px}.card{background:white;border:1px solid #dfe5ef;border-radius:16px;padding:18px;box-shadow:0 6px 24px rgba(28,45,80,.06)}label{font-weight:700;display:block;margin:0 0 7px}textarea{width:100%;min-height:95px;box-sizing:border-box;border:1px solid #bfc9d9;border-radius:10px;padding:12px;font:inherit}button{border:0;border-radius:10px;background:#233dff;color:white;font-weight:800;padding:12px 16px;cursor:pointer}.result{display:none}.result.show{display:block}.relation{font-size:28px;font-weight:900}.SUPPORTED{color:#147a46}.CONTRADICTED{color:#b42318}.INSUFFICIENT{color:#805b10}.small{font-size:13px;color:#536174}.ceiling{border-left:4px solid #65758b;padding-left:12px}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;word-break:break-all}@media(max-width:560px){h1{font-size:28px}}
+</style></head><body><main class="wrap">
+<header><span class="badge">Track 2 · Equity in Education</span><h1>Evidence Access Coach</h1><p>A no-login, low-bandwidth tool that helps students separate claims, evidence, and uncertainty without pretending to be a truth oracle.</p></header>
+<div class="grid">
+<section class="card"><label for="claim">Assignment claim</label><textarea id="claim" placeholder="Example: School garden reduced cafeteria food waste"></textarea></section>
+<section class="card"><label for="evidence">Evidence excerpt</label><textarea id="evidence" placeholder="Paste one excerpt that directly relates to the claim"></textarea></section>
+<section><button id="check">Compare claim and excerpt</button></section>
+<section class="card result" id="result"><div id="relation" class="relation"></div><p id="reason"></p><p><strong>Next evidence step:</strong> <span id="next"></span></p></section>
+<section class="card"><h2>How to read the result</h2><p><strong>SUPPORTED</strong> means the excerpt directly aligns with the claim wording. <strong>CONTRADICTED</strong> means the excerpt contains an opposing direction or explicit negation. <strong>INSUFFICIENT</strong> means the excerpt does not directly address enough of the claim.</p><p class="ceiling"><strong>Claim ceiling:</strong> this is an educational evidence-comparison aid. It does not certify truth, scientific validity, source authority, or universal correctness.</p><p class="small">Static client-side prototype. No account, no paid API, no student data collection.</p></section>
+</div></main>
+<script type="module">
+import {assessEvidence} from './app.mjs';
+const claim=document.getElementById('claim'), evidence=document.getElementById('evidence'), out=document.getElementById('result');
+function run(){const r=assessEvidence(claim.value,evidence.value);document.getElementById('relation').textContent=r.relation;document.getElementById('relation').className='relation '+r.relation;document.getElementById('reason').textContent=r.reason;document.getElementById('next').textContent=r.next;out.classList.add('show');}
+document.getElementById('check').addEventListener('click',run);
+if(new URLSearchParams(location.search).get('demo')==='1'){claim.value='School garden reduced cafeteria food waste';evidence.value='The school garden project decreased cafeteria food waste by 18 percent';run();}
+</script></body></html>
