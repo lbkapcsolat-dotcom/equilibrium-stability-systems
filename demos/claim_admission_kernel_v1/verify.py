@@ -35,7 +35,7 @@ def main() -> int:
         print("BASELINE HOLD: unexpected public baseline status", file=sys.stderr)
         return 2
     if baseline.get("real_actuation") is not False or baseline.get("production_admission") is not False:
-        print("BASELINE HOLD public claim boundary changed", file=sys.stderr)
+        print("BASELINE HOLD: public claim boundary changed", file=sys.stderr)
         return 2
 
     print(f"Public research baseline: PASS / {actual}")
@@ -43,7 +43,7 @@ def main() -> int:
     run([sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"])
     print("\n[2/2] Visible replay")
     run([sys.executable, "replay.py"])
-    print("\nVERIFY PASS research-stage offline kernel only.")
+    print("\nVERIFY PASS: research-stage offline kernel only.")
     return 0
 
 
