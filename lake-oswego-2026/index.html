@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EcoEvidence</title>
+  <style>
+    :root{font-family:system-ui,sans-serif;color-scheme:light}
+    body{margin:0;background:#f7f8f5;color:#1f2a1f}
+    main{max-width:760px;margin:0 auto;padding:32px 18px 56px}
+    .card{background:white;border:1px solid #dfe6dc;border-radius:18px;padding:20px;margin:16px 0}
+    label{display:block;font-weight:650;margin:14px 0 6px}
+    textarea,select{width:100%;box-sizing:border-box;padding:10px;border:1px solid #b9c7b7;border-radius:10px;background:white}
+    button{margin-top:16px;padding:11px 16px;border:0;border-radius:999px;background:#203c2a;color:white;font-weight:700;cursor:pointer}
+    .state{font-size:1.25rem;font-weight:800}
+    ul{padding-left:22px}
+    small{color:#5a6759}
+  </style>
+</head>
+<body>
+<main>
+  <h1>EcoEvidence</h1>
+  <p>Structure a sustainability claim before comparing evidence. This tool does not decide whether the claim is true.</p>
+
+  <section class="card">
+    <label for="claim">Sustainability claim</label>
+    <textarea id="claim" rows="3" placeholder="Example: The school reduced electricity use this month."></textarea>
+
+    <label for="evidence">Observation or source excerpt</label>
+    <textarea id="evidence" rows="4" placeholder="Example: Meter records show 1,240 kWh in September versus 1,510 kWh in August."></textarea>
+
+    <label for="sourceType">Source type</label>
+    <select id="sourceType">
+      <option value="unknown">Unknown / not stated</option>
+      <option value="direct_measurement">Direct measurement</option>
+      <option value="official_dataset">Official dataset</option>
+      <option value="peer_reviewed">Peer-reviewed study</option>
+      <option value="news_or_social">News / social post</option>
+    </select>
+
+    <label for="uncertainty">What is still uncertain?</label>
+    <textarea id="uncertainty" rows="3" placeholder="Example: Weather and school occupancy also changed between months."></textarea>
+
+    <button id="evaluate">Evaluate structure</button>
+  </section>
+
+  <section id="result" class="card" hidden>
+    <div id="state" class="state"></div>
+    <p id="summary"></p>
+    <ul id="reasons"></ul>
+    <small>Claim ceiling: evidence-structure coaching only, not environmental truth verification.</small>
+  </section>
+</main>
+<script type="module">
+  import { assessEvidence } from './app.js';
+  const q=id=>document.getElementById(id);
+  q('evaluate').addEventListener('click',()=>{
+    const out=assessEvidence({
+      claim:q('claim').value,
+      evidence:q('evidence').value,
+      sourceType:q('sourceType').value,
+      uncertainty:q('uncertainty').value
+    });
+    q('state').textContent=out.state;
+    q('summary').textContent=out.summary;
+    q('reasons').replaceChildren(...out.reasons.map(x=>Object.assign(document.createElement('li'),{textContent:x})));
+    q('result').hidden=false;
+  });
+</script>
+</body>
+</html>
