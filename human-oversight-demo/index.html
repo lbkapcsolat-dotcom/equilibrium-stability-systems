@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ESS Human Oversight Capability Lab</title>
+<style>
+:root{font-family:Inter,system-ui,sans-serif;color-scheme:dark}
+body{margin:0;background:#0b1020;color:#eef2ff;line-height:1.55}
+main{max-width:980px;margin:auto;padding:56px 20px 72px}
+.hero{padding:34px;border:1px solid #2b3558;border-radius:20px;background:#121932}
+h1{font-size:clamp(2rem,5vw,4.2rem);line-height:1.02;margin:0 0 16px}
+h2{margin-top:34px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{border:1px solid #2b3558;border-radius:14px;padding:18px;background:#11172b}
+.badge{display:inline-block;padding:6px 10px;border:1px solid #52629b;border-radius:999px;margin-right:8px;margin-bottom:8px}
+code{background:#1b2443;padding:2px 5px;border-radius:5px}
+small{color:#aab4d6}
+</style>
+</head>
+<body><main>
+<section class="hero">
+<span class="badge">Human Oversight</span><span class="badge">Evidence</span><span class="badge">Deterministic Replay</span>
+<h1>ESS Human Oversight Capability Lab</h1>
+<p>A bounded laboratory for training, failing, measuring, auditing and deterministically replaying human-oversight decisions around AI-assisted systems.</p>
+<p><strong>Current status:</strong> <code>PASS_BOUNDED_EXECUTABLE_SYNTHETIC_HARNESS</code></p>
+</section>
+
+<h2>What the lab tests</h2>
+<div class="grid">
+<div class="card"><strong>Source & provenance literacy</strong><br><small>Can the operator distinguish apparent consensus from independent evidence?</small></div>
+<div class="card"><strong>Contradiction handling</strong><br><small>Can conflicting evidence trigger HOLD rather than forced consensus?</small></div>
+<div class="card"><strong>Automation-bias resistance</strong><br><small>Will the human reject an AI recommendation when evidence is insufficient?</small></div>
+<div class="card"><strong>Authority awareness</strong><br><small>Can the operator stay inside role-specific action boundaries?</small></div>
+</div>
+
+<h2>Three-minute example</h2>
+<div class="card">
+<p><strong>AI recommendation:</strong> PROCEED</p>
+<p>Three supporting reports appear independent, but provenance resolution collapses them to one source root. An independent primary source conflicts with that support.</p>
+<p><strong>ESS state:</strong> HOLD</p>
+<p><strong>Expected bounded human action:</strong> HOLD or STOP</p>
+</div>
+
+<h2>Frozen capability set</h2>
+<div class="grid">
+<div class="card">C1 SOURCE LITERACY</div>
+<div class="card">C2 PROVENANCE LITERACY</div>
+<div class="card">C3 UNCERTAINTY LITERACY</div>
+<div class="card">C4 CONTRADICTION HANDLING</div>
+<div class="card">C5 AUTOMATION-BIAS RESISTANCE</div>
+<div class="card">C6 AUTHORITY AWARENESS</div>
+<div class="card">C7 VETO / OVERRIDE EXECUTION</div>
+<div class="card">C8 SAFE-STOP DISCIPLINE</div>
+</div>
+
+<h2>Claim ceiling</h2>
+<div class="card">
+<p>This demo does <strong>not</strong> establish general human competence, organizational resilience, AI Act compliance, production readiness, or runtime admission.</p>
+<p>Real-human empirical validation remains a separate HOLD gate.</p>
+</div>
+
+<p><small>Public-safe demo. No private control-plane identifiers, credentials, participant data, or internal authority artifacts are exposed.</small></p>
+</main></body></html>
