@@ -1,0 +1,15 @@
+{
+  "artifact_kind": "PUBLIC_SAFE_DEMO_RECEIPT",
+  "project": "ESS Human Oversight Capability Lab",
+  "status": "PASS_BOUNDED_EXECUTABLE_SYNTHETIC_HARNESS",
+  "empirical_human_validation": "HOLD",
+  "public_safe": true,
+  "exposes_private_control_plane": false,
+  "claims": {
+    "general_human_competence": false,
+    "organizational_resilience": false,
+    "ai_act_compliance": false,
+    "production_readiness": false,
+    "runtime_admission": false
+  }
+}
